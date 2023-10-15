@@ -6,4 +6,4 @@ function openTab(){
     })
 }
 
-browser.browserAction.onClicked.addListener(openTab)
+browser.browserAction.onClicked.addListener(openTab);
