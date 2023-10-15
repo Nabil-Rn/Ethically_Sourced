@@ -12,40 +12,46 @@ document.addEventListener('click', (e) => {
         console.clear();
         console.log(`You clicked ${urlToCheck.href}`);
 
-      const url = urlToCheck.href;
+        const url = urlToCheck.href;
 
-      // Request body
-      const requestObject = {
-        client: {
-          clientVersion: '1.0.0'
-        },
-        threatInfo: {
-          threatTypes: ['MALWARE', 'SOCIAL_ENGINEERING', 'UNWANTED_SOFTWARE'],
-          platformTypes: ['ANY_PLATFORM'],
-          threatEntryTypes: ['URL'],
-          threatEntries: [{url: url}]
-        }
-      };
+        // Request body
+        const requestObject = {
+            client: {
+                clientVersion: '1.0.0'
+            },
+            threatInfo: {
+                threatTypes: ['MALWARE', 'SOCIAL_ENGINEERING', 'UNWANTED_SOFTWARE'],
+                platformTypes: ['ANY_PLATFORM'],
+                threatEntryTypes: ['URL'],
+                threatEntries: [{url: url}]
+            }
+        };
 
-      // Make the API request
-      fetch(safeBrowsingURL,  {
-          mode: 'cors',
-        method: 'POST',
-          crossDomain: true,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestObject),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-
-          console.log(data);
-
+        // Make the API request
+        fetch(safeBrowsingURL,  {
+            mode: 'cors',
+            method: 'POST',
+            crossDomain: true,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestObject),
         })
-        .catch((error) => {
-          console.error('The api error IS THIS:', error);
-        });
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle the response data here (contains threat information)
+                console.log('Data: ');
+                console.log(data);
+                console.log(JSON.stringify(data));
+
+                if(data.matches) {
+                    // Simulate an HTTP redirect:
+                    window.location.href = "figmaPage.html";
+                }
+            })
+            .catch((error) => {
+                console.error('The api error IS THIS:', error);
+            });
     }
 
-  });
+});
