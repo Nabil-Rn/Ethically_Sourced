@@ -1,10 +1,9 @@
 # Ethically_Sourced
 Bell Geekfest Hackathon 
 
-# Current Idea:
-
+ **[Current Idea:]
 # Prototype:
-    A locally hosted web application which checks links and redirects to  a verification page if URL is not in the whitelist, where the user can see various information and choose to proceed to the link or not. Whitelist would be made from previously verified URLs so that the tool is less bothersome as you keep using it.
+    **A locally hosted web application which checks links and redirects to  a verification page if URL is not in the whitelist, where the user can see various information and choose to proceed to the link or not. Whitelist would be made from previously verified URLs so that the tool is less bothersome as you keep using it.
 
 # Final Product:
     Have it as a web extension, so that this is done automatically.
