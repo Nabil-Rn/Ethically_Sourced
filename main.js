@@ -39,7 +39,7 @@ document.addEventListener('click', (e) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          // Handle the response data here (contains threat information)
+
           console.log(data);
 
         })
