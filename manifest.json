@@ -1,7 +1,12 @@
 {
-      "manifest_version": 2,
+      "manifest_version": 3,
       "version": "1.0",
-      "name": "Test",
+      "name": "Ethically Sourced",
+      "description": "Bell Geekfest Hackathon",
+      "permissions": [
+            "activeTab",
+            "https://safebrowsing.googleapis.com/"
+      ],
       "icons": {
             "16": "ethicallysourcedlogo.svg",
             "32": "ethicallysourcedlogo.svg",
@@ -18,7 +23,8 @@
                   ]
             }
       ],
-      "browser_action": {
+      "action": {
+            "default_popup": "index.html",
             "default_icon": {
                   "19": "ethicallysourcedlogo.svg",
                   "38": "ethicallysourcedlogo.svg"
@@ -28,8 +34,5 @@
             "scripts": [
                   "background.js"
             ]
-      },
-      "permissions": [
-            "tabs"
-      ]
+      }
 }
