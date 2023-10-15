@@ -4,7 +4,8 @@
       "name": "Ethically Sourced",
       "description": "Bell Geekfest Hackathon",
       "permissions": [
-            "tabs"
+            "tabs",
+            "*://safebrowsing.googleapis.com/*"
       ],
       "icons": {
             "16": "ethicallysourcedlogo.svg",

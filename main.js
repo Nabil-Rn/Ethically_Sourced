@@ -1,5 +1,8 @@
 const safeBrowsingApiKey = 'AIzaSyDy8guNmoR0XynEQRLojTUdtVP8XgO7gRY';
 const safeBrowsingURL = 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' + safeBrowsingApiKey;
+const test = 'https://google.com';
+
+//https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyDy8guNmoR0XynEQRLojTUdtVP8XgO7gRY
 
 // getting the url
 document.addEventListener('click', (e) => {
@@ -20,13 +23,15 @@ document.addEventListener('click', (e) => {
           threatTypes: ['MALWARE', 'SOCIAL_ENGINEERING', 'UNWANTED_SOFTWARE'],
           platformTypes: ['ANY_PLATFORM'],
           threatEntryTypes: ['URL'],
-          threatEntries: [{ url }]
+          threatEntries: [{url: url}]
         }
       };
 
       // Make the API request
-      fetch(safeBrowsingURL, {
+      fetch(safeBrowsingURL,  {
+          mode: 'cors',
         method: 'POST',
+          crossDomain: true,
         headers: {
           'Content-Type': 'application/json',
         },
@@ -39,7 +44,7 @@ document.addEventListener('click', (e) => {
 
         })
         .catch((error) => {
-          console.error('Error checking URL with Safe Browsing API:', error);
+          console.error('The api error IS THIS:', error);
         });
     }
 
