@@ -1,11 +1,10 @@
 {
-      "manifest_version": 3,
+      "manifest_version": 2,
       "version": "1.0",
       "name": "Ethically Sourced",
       "description": "Bell Geekfest Hackathon",
       "permissions": [
-            "activeTab",
-            "https://safebrowsing.googleapis.com/"
+            "tabs"
       ],
       "icons": {
             "16": "ethicallysourcedlogo.svg",
@@ -23,7 +22,7 @@
                   ]
             }
       ],
-      "action": {
+      "browser_action": {
             "default_popup": "index.html",
             "default_icon": {
                   "19": "ethicallysourcedlogo.svg",
